@@ -1,0 +1,17 @@
+.message {
+  width: 100%;
+  border: 1px solid #4f4e4e;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.message > p {
+  color: #161616;
+  font-size: 12em;
+}
+
+.list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
