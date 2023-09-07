@@ -14,3 +14,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.listChat {
+  display: flex;
+}
+
+.listChat > .sender {
+  align-items: flex-end;
+}
+
+.listChat > .receiver {
+  align-items: flex-start;
+}

@@ -1,5 +1,7 @@
 .message {
-  width: 100%;
+  padding: 20px;
+  margin: 10px;
+  width: 600px;
   border: 1px solid #4f4e4e;
   border-radius: 3px;
   background-color: #fff;
@@ -7,11 +9,42 @@
 
 .message > p {
   color: #161616;
-  font-size: 12em;
+  font-size: 1rem;
 }
 
 .list {
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+
+.chatBox {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Full-width inputs */
+.input {
+  width: calc(100% - 80px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80px;
+}
+
+.divForm {
+  display: flex;
+  flex-direction: row;
 }
