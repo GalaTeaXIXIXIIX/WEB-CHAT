@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 import connectDB from "@/db";
 import Chat from "@/models/Chat";
+import User from "@/models/User";
 
 export async function GET(req: Request, res: Response) {
   // simulate IO latency
@@ -12,12 +13,21 @@ export async function GET(req: Request, res: Response) {
 }
 
 export async function POST(req: Request, res: Response) {
-  const body = await req.json();
-  const { id = "0", chat = "" } = body;
+  try {
+    const body = await req.json();
+    const { content, sender, room } = body;
 
-  // ChatList.push({ id, chat });
-  // simulate IO latency
-  await new Promise((r) => setTimeout(r, 500));
+    const user = User.findOne({ username: sender });
+    const chat = new Chat({
+      content,
+      sender: user,
+      room,
+    });
 
-  return NextResponse.json({ id, chat });
+    await chat.save();
+
+    return NextResponse.json({ chat });
+  } catch (e) {
+    return NextResponse.json({ data: e });
+  }
 }

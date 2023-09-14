@@ -1,5 +1,12 @@
 /* Types */
 declare type Message = {
-  id: string;
-  chat: string;
+  _id: string;
+  content: string;
+  sender: string;
+  room: string;
+};
+
+declare type User = {
+  _id: string;
+  username: string;
 };

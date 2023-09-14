@@ -1,3 +1,5 @@
+import { UserList } from "../components/User/UserList";
+
 export default function VerifyPage() {
   return (
     <>
@@ -6,6 +8,7 @@ export default function VerifyPage() {
         This page is intended to verify that Redux state is persisted across
         page navigations.
       </p>
+      <UserList />
     </>
-  )
+  );
 }

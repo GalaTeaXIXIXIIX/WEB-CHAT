@@ -7,6 +7,8 @@ import User from "@/models/User";
 connectDB();
 
 export async function GET(req: Request, res: Response) {
+  console.log("sini");
+
   try {
     const users = await User.find({});
     return NextResponse.json({ data: users });

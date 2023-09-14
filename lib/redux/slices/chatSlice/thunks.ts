@@ -34,10 +34,10 @@ export const addChatAsync = createAppAsyncThunk(
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.
 export const addChat =
-  (chat: string): ReduxThunkAction =>
+  (content: string): ReduxThunkAction =>
   (dispatch, getState) => {
-    const id = Date.now().toString();
-    const message: Message = { id, chat };
-    dispatch(chatSlice.actions.add(message));
+    const _id = Date.now().toString();
+    // const message: Message = { _id, content };
+    // dispatch(chatSlice.actions.add(message));
     // dispatch(addChatAsync(message))
   };

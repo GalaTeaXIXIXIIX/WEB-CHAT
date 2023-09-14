@@ -1,0 +1,29 @@
+.list {
+  padding: 20px;
+  margin: 10px;
+  width: 120px;
+  border: 1px solid #4f4e4e;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.user {
+  cursor: pointer;
+  background-color: #ccc;
+  padding: 3px;
+  margin: 1px;
+  width: 80px;
+  border: 1px solid #4f4e4e;
+}
+
+.userSelected {
+  background-color: #8e8e43;
+  padding: 3px;
+  margin: 1px;
+  width: 80px;
+  border: 1px solid #4f4e4e;
+}
+
+.username {
+  font-size: 1rem;
+}
