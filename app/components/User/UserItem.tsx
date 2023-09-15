@@ -2,20 +2,31 @@
 
 import {
   chatSlice,
+  loadChatAsync,
   selectReceiver,
   useDispatch,
   useSelector,
 } from "@/lib/redux";
 import styles from "./user.module.css";
 
-export const UserItem = ({ username }: { username: string }) => {
+export const UserItem = ({
+  username,
+  sender,
+}: {
+  username: string;
+  sender: string;
+}) => {
   const dispatch = useDispatch();
   const receiver = useSelector(selectReceiver);
+  const selectUser = () => {
+    dispatch(chatSlice.actions.receiver(username));
+    dispatch(loadChatAsync({ sender, receiver: username }));
+  };
 
   return (
     <div
       className={username === receiver ? styles.userSelected : styles.user}
-      onClick={() => dispatch(chatSlice.actions.receiver(username))}
+      onClick={selectUser}
     >
       <p>{username}</p>
     </div>

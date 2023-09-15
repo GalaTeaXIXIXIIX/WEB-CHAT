@@ -28,7 +28,7 @@ export const ChatForm = () => {
         _id,
         content,
         sender: user.username,
-        room: `${user.username}-${receiver}`,
+        receiver,
       };
       dispatch(chatSlice.actions.add(message)); //adding to interface
       dispatch(addChatAsync(message)); // adding to database

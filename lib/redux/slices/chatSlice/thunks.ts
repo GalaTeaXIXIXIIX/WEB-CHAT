@@ -11,8 +11,8 @@ import type { ReduxThunkAction } from "@/lib/redux";
 // typically used to make async requests.
 export const loadChatAsync = createAppAsyncThunk(
   "chat/fetchLoadchat",
-  async () => {
-    const response = await fetchLoadChat();
+  async ({ sender, receiver }: { sender: string; receiver: string }) => {
+    const response = await fetchLoadChat(sender, receiver);
 
     console.log("ini", response.data);
 

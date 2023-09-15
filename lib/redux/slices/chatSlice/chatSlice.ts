@@ -7,7 +7,7 @@ import { loadChatAsync } from "./thunks";
 const initialState: ChatSliceState = {
   value: [],
   status: "idle",
-  room: "",
+  sender: "",
   receiver: "",
 };
 
@@ -19,8 +19,8 @@ export const chatSlice = createSlice({
     add: (state, action: PayloadAction<Message>) => {
       state.value.push(action.payload);
     },
-    room: (state, action: PayloadAction<string>) => {
-      state.room = action.payload;
+    sender: (state, action: PayloadAction<string>) => {
+      state.sender = action.payload;
     },
     receiver: (state, action: PayloadAction<string>) => {
       state.receiver = action.payload;
@@ -48,6 +48,6 @@ export const chatSlice = createSlice({
 export interface ChatSliceState {
   value: Message[];
   status: "idle" | "loading" | "failed";
-  room: string;
+  sender: string;
   receiver: string;
 }

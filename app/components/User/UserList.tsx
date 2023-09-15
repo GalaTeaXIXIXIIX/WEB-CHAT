@@ -34,7 +34,11 @@ export const UserList = () => {
       {users
         .filter((item) => item.username !== user.username)
         .map((item) => (
-          <UserItem key={item._id} username={item.username} />
+          <UserItem
+            key={item._id}
+            username={item.username}
+            sender={user.username}
+          />
         ))}
     </div>
   );

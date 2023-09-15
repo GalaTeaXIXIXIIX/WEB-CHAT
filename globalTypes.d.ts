@@ -3,7 +3,7 @@ declare type Message = {
   _id: string;
   content: string;
   sender: string;
-  room: string;
+  receiver: string;
 };
 
 declare type User = {

@@ -1,27 +1,37 @@
 /* Core */
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import connectDB from "@/db";
 import Chat from "@/models/Chat";
 import User from "@/models/User";
 
-export async function GET(req: Request, res: Response) {
-  // simulate IO latency
-  await new Promise((r) => setTimeout(r, 500));
+connectDB();
 
-  return NextResponse.json({ data: [] });
+export async function GET(req: NextRequest, res: Response) {
+  try {
+    const sender = req.nextUrl.searchParams.get("sender");
+    const receiver = req.nextUrl.searchParams.get("receiver");
+    const chats = await Chat.find({
+      $or: [
+        { sender: sender, receiver: receiver },
+        { sender: receiver, receiver: sender },
+      ],
+    }).sort({ createdAt: 1 });
+    return NextResponse.json({ data: chats });
+  } catch (e) {
+    return NextResponse.json({ data: e });
+  }
 }
 
 export async function POST(req: Request, res: Response) {
   try {
     const body = await req.json();
-    const { content, sender, room } = body;
+    const { content, sender, receiver } = body;
 
-    const user = User.findOne({ username: sender });
     const chat = new Chat({
       content,
-      sender: user,
-      room,
+      sender,
+      receiver,
     });
 
     await chat.save();
