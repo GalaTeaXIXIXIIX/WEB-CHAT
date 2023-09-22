@@ -8,7 +8,6 @@ import styles from "./chat.module.css";
 import { io } from "socket.io-client";
 import {
   loadChatAsync,
-  selectChats,
   selectReceiver,
   useDispatch,
   useSelector,

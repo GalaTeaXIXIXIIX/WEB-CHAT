@@ -32,7 +32,18 @@ export const UserItem = ({
       className={username === receiver ? styles.userSelected : styles.user}
       onClick={selectUser}
     >
-      <p>{username}</p>
+      <div className="bg-white px-3 flex items-center hover:bg-grey-lighter cursor-pointer">
+        <div>
+          <img className="h-12 w-12 rounded-full" src="bussines-man.png" />
+        </div>
+        <div className="ml-4 flex-1 border-b border-grey-lighter py-4">
+          <div className="flex items-bottom justify-between">
+            <div>
+              <p className="text-grey-darkest">{username}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

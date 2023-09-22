@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./user.module.css";
 import { UserItem } from "./UserItem";
-import { useDispatch, selectReceiver } from "@/lib/redux";
+import { useDispatch } from "@/lib/redux";
 
 export const UserList = () => {
   const dispatch = useDispatch();
@@ -25,12 +25,11 @@ export const UserList = () => {
     });
     if (response.ok) {
       const data = await response.json();
-      console.log(data.data);
       setUsers(data.data);
     }
   };
   return (
-    <div className={styles.list}>
+    <div className="bg-grey-lighter flex-1 overflow-auto">
       {users
         .filter((item) => item.username !== user.username)
         .map((item) => (

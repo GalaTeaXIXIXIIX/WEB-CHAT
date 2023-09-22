@@ -1,25 +1,27 @@
 .list {
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
-  width: 120px;
-  border: 1px solid #4f4e4e;
+  width: 30%;
   border-radius: 3px;
   background-color: #fff;
 }
 
 .user {
   cursor: pointer;
-  background-color: #ccc;
   padding: 3px;
   margin: 1px;
-  border: 1px solid #4f4e4e;
+  text-align: center;
+}
+
+.user:hover {
+  background-color: #c5d3db;
 }
 
 .userSelected {
-  background-color: #8e8e43;
+  background-color: #9ebbcc;
   padding: 3px;
   margin: 1px;
-  border: 1px solid #4f4e4e;
+  text-align: center;
 }
 
 .username {

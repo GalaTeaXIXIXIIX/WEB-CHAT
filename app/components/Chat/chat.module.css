@@ -1,16 +1,16 @@
 .messageRight {
   padding: 20px;
-  margin: 10px;
+  margin: 0 40px 40px 0;
   border: 1px solid #4f4e4e;
-  border-radius: 3px;
+  border-radius: 20px;
   background-color: #fff;
 }
 
 .messageLeft {
   padding: 20px;
-  margin: 10px;
+  margin: 0 0 40px 40px;
   border: 1px solid #4f4e4e;
-  border-radius: 3px;
+  border-radius: 20px;
   background-color: #605555;
 }
 
@@ -21,13 +21,14 @@
 
 .list {
   display: flex;
-  width: 600px;
+  width: 100%;
   flex-direction: column;
 }
 
 .chatBox {
   display: flex;
   flex-direction: column;
+  width: 80%;
 }
 
 .allChat {

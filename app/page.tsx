@@ -1,10 +1,10 @@
 /* Components */
-import { Counter } from './components/Counter/Counter'
+import { Chat } from "./components/Chat/Chat";
 
 export default function IndexPage() {
-  return <Counter />
+  return <Chat />;
 }
 
 export const metadata = {
-  title: 'Redux Toolkit',
-}
+  title: "Redux Toolkit",
+};
