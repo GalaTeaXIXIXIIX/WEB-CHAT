@@ -13,14 +13,14 @@ import {
 import styles from "./chat.module.css";
 import { ChatItem } from "./ChatItem";
 
-export const ChatList = () => {
+export const ChatList = ({ receiver }: { receiver: string }) => {
   const dispatch = useDispatch();
   const chats = useSelector(selectChats);
 
   return (
     <div className={styles.list}>
       {chats?.map((item) => (
-        <ChatItem key={item._id} message={item} />
+        <ChatItem key={item._id} message={item} receiver={receiver} />
       ))}
     </div>
   );
