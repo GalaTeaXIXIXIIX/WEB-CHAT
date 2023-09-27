@@ -1,15 +1,10 @@
 "use client";
 
-import styles from "./chat.module.css";
-
-export const ChatItem = ({
-  message,
-  receiver,
-}: {
-  message: Message;
-  receiver: string;
-}) => {
+export const ChatItem = ({ message }: { message: Message }) => {
   const user = JSON.parse(localStorage.getItem("user") || "null");
+  const time = message.createdAt;
+  const clock: Date = new Date(time);
+
   return (
     <>
       <div
@@ -23,12 +18,16 @@ export const ChatItem = ({
           className="rounded py-2 px-3"
           style={
             message.sender === user.username
-              ? { backgroundColor: "#BBFAA8" }
+              ? { backgroundColor: "rgb(197 242 184)" }
               : { backgroundColor: "#f2f2f2" }
           }
         >
           <p className="text-sm mt-1">{message.content}</p>
-          <p className="text-right text-xs text-grey-dark mt-1">12:45 pm</p>
+          <p className="text-right text-xs text-grey-dark mt-1">
+            {time
+              ? clock.toString().slice(15, 21)
+              : new Date(Date.now()).toString().slice(15, 21)}
+          </p>
         </div>
       </div>
       {/* <div

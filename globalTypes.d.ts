@@ -4,6 +4,7 @@ declare type Message = {
   content: string;
   sender: string;
   receiver: string;
+  createdAt: Date;
 };
 
 declare type User = {

@@ -36,7 +36,6 @@ export const chatSlice = createSlice({
       .addCase(loadChatAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.value = action.payload;
-        console.log("klo ini", action.payload);
       })
       .addCase(loadChatAsync.rejected, (state, action) => {
         state.status = "failed";

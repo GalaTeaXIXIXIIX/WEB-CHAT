@@ -14,8 +14,6 @@ export const loadChatAsync = createAppAsyncThunk(
   async ({ sender, receiver }: { sender: string; receiver: string }) => {
     const response = await fetchLoadChat(sender, receiver);
 
-    console.log("ini", response.data);
-
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }

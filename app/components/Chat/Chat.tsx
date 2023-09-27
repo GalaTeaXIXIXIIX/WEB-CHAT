@@ -209,7 +209,7 @@ export const Chat = () => {
                         </p>
                       </div>
                     </div>
-                    <ChatList receiver={receiver} />
+                    <ChatList />
                   </div>
                 </div>
                 <ChatForm />
