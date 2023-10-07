@@ -110,10 +110,6 @@ export const Chat = () => {
                       </svg>
                     </div>
                   </div>
-                  {/* <section className={styles.container}>
-                        <h1>Masuk</h1>
-                        <main className={styles.main}>{props.children}</main>
-                      </section> */}
                 </div>
                 <div className="py-2 px-2 bg-grey-lightest">
                   <input
@@ -122,7 +118,6 @@ export const Chat = () => {
                     placeholder="Search or start new chat"
                   />
                 </div>
-
                 <UserList />
               </div>
               <div className="w-2/3 border flex flex-col">
