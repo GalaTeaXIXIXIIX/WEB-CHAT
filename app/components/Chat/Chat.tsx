@@ -67,6 +67,7 @@ export const Chat = () => {
                       src="bussines-man.png"
                     />
                   </div>
+                  <p>{user.username}</p>
                   <div className="flex">
                     <div>
                       <svg

@@ -28,11 +28,15 @@ export const UserItem = ({
   };
 
   return (
-    <div
-      className={username === receiver ? styles.userSelected : styles.user}
-      onClick={selectUser}
-    >
-      <div className="bg-white px-3 flex items-center hover:bg-grey-lighter cursor-pointer">
+    <div onClick={selectUser}>
+      <div
+        className="bg-white px-3 flex items-center hover:bg-grey-lighter cursor-pointer"
+        style={
+          username === receiver
+            ? { backgroundColor: "rgb(218 231 238)" }
+            : { backgroundColor: "" }
+        }
+      >
         <div>
           <img className="h-12 w-12 rounded-full" src="bussines-man.png" />
         </div>
